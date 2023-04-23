@@ -38,3 +38,8 @@ function initLocalClocks() {
     }
 }
 initLocalClocks();
+
+
+document.addEventListener("click", function() {
+    document.getElementById("minutes-container").style.transform = "rotate(90deg)";
+});
