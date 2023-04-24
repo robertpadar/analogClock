@@ -41,12 +41,14 @@ function initLocalClocks() {
 }
 initLocalClocks();
 
+angle = angle.push;
+
 document.getElementById("fiveMin").addEventListener('click', function() {
-    angle = angle.push + 30;
+    angle = angle + 30;
     document.getElementById('minutes').style.transform = "rotateZ(" + angle + "deg)";
 });
 
 document.getElementById("tenMin").addEventListener('click', function() {
-    angle = angle.push - 60;
+    angle = angle - 60;
     document.getElementById('minutes').style.transform = "rotateZ(" + angle + "deg)";
 });
