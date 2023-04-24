@@ -1,7 +1,8 @@
 /*
   * Starts any clocks using the user's local time
   * From: cssanimation.rocks/clocks
-  */
+
+
 function initLocalClocks() {
     // Get the local time using JS
     var date = new Date;
@@ -38,8 +39,8 @@ function initLocalClocks() {
     }
 }
 initLocalClocks();
+*/
 
-
-document.addEventListener("click", function() {
-    document.getElementById("minutes-container").style.transform = "rotate(90deg)";
+document.getElementById("fiveMin").addEventListener('click', function() { 
+    document.getElementById('minutes').style.transform = "rotate(30deg)";
 });
