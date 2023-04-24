@@ -2,7 +2,7 @@
   * Starts any clocks using the user's local time
   * From: cssanimation.rocks/clocks
 */
-
+var angle = [];
 function initLocalClocks() {
     // Get the local time using JS
     var date = new Date;
@@ -29,7 +29,8 @@ function initLocalClocks() {
     for (var j = 0; j < hands.length; j++) {
         var elements = document.querySelectorAll('.' + hands[j].hand);
         for (var k = 0; k < elements.length; k++) {
-              elements[k].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)';
+            elements[k].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)';
+            angle.push = hands[1].angle;
             elements[k].style.transform = 'rotateZ('+ hands[j].angle +'deg)';
             // If this is a minute hand, note the seconds position (to calculate minute position later)
             if (hands[j].hand === 'minutes') {
@@ -40,7 +41,12 @@ function initLocalClocks() {
 }
 initLocalClocks();
 
+document.getElementById("fiveMin").addEventListener('click', function() {
+    angle = angle.push + 30;
+    document.getElementById('minutes').style.transform = "rotateZ(" + angle + "deg)";
+});
 
-document.getElementById("fiveMin").addEventListener('click', function() { 
-    document.getElementById('minutes').style.transform = "rotate(30deg)";
+document.getElementById("tenMin").addEventListener('click', function() {
+    angle = angle.push - 60;
+    document.getElementById('minutes').style.transform = "rotateZ(" + angle + "deg)";
 });
